@@ -1,0 +1,35 @@
+{
+  "name": "@apiverve/markdowntable",
+  "version": "1.1.12",
+  "description": "Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment.",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "test": "mocha",
+    "example": "node examples/basic.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apiverve/markdowntable-api.git",
+    "directory": "npm"
+  },
+  "keywords": [
+    "markdown table", "table generator", "markdown converter", "data to table", "github markdown"
+  ],
+  "author": "APIVerve <hello@apiverve.com> (http://apiverve.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apiverve/markdowntable-api/issues"
+  },
+  "homepage": "https://apiverve.com/marketplace/markdowntable?utm_source=npm",
+  "devDependencies": {
+    "mocha": "^11.0.1",
+    "chai": "^5.1.2",
+    "dotenv": "^16.4.7"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "promise": "^8.3.0",
+    "axios": "1.13.2"
+  }
+}
