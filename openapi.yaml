@@ -1,0 +1,129 @@
+openapi: 3.0.4
+info:
+  title: Markdown Table Generator
+  description: Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment.
+  termsOfService: https://apiverve.com/terms/
+  contact:
+    name: APIVerve Support
+    email: hello@apiverve.com
+    url: https://apiverve.com/contact
+  version: 1.0.9
+externalDocs:
+  description: Learn more about APIVerve
+  url: https://docs.apiverve.com?utm_source=openapi
+servers:
+- url: https://api.apiverve.com/
+paths:
+  /v1/markdowntable:
+    post:
+      summary: Generate Markdown Table
+      description: Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment.
+      operationId: markdowntable
+      parameters: []
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    description: status
+                  error:
+                    type: string
+                    description: error
+                  data:
+                    type: string
+                    description: data
+              example:
+                status: ok
+                error: 
+                data:
+                  markdown: >-
+                    | Name | Age | City |
+
+                    | --- | --- | --- |
+
+                    | John Doe | 30 | New York |
+
+                    | Jane Smith | 25 | Los Angeles |
+
+                    | Bob Johnson | 35 | Chicago |
+                  columnCount: 3
+                  rowCount: 3
+                  cellCount: 12
+                  headers:
+                  - Name
+                  - Age
+                  - City
+                  alignments:
+                  - left
+                  - left
+                  - left
+        '401':
+          description: Your request was not authorized, or your API Key was invalid
+        '404':
+          description: Requested resource was not found
+        '500':
+          description: A server error has occured, try again later
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                headers:
+                  type: array
+                  description: Array of column header names
+                  example:
+                  - Name
+                  - Age
+                  - City
+                rows:
+                  type: array
+                  description: Array of row arrays containing cell values
+                  example:
+                  - - John Doe
+                    - 30
+                    - New York
+                  - - Jane Smith
+                    - 25
+                    - Los Angeles
+                  - - Bob Johnson
+                    - 35
+                    - Chicago
+                alignment:
+                  type: string
+                  description: 'Column alignment: left, center, right, or array of alignments per column'
+                  default: left
+                  example: left
+              required:
+              - headers
+              - rows
+              example:
+                headers:
+                - Name
+                - Age
+                - City
+                rows:
+                - - John Doe
+                  - 30
+                  - New York
+                - - Jane Smith
+                  - 25
+                  - Los Angeles
+                - - Bob Johnson
+                  - 35
+                  - Chicago
+                alignment: left
+components:
+  securitySchemes:
+    api_key:
+      type: apiKey
+      name: x-api-key
+      in: header
+security:
+- api_key: []
