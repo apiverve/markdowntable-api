@@ -12,14 +12,8 @@ public class BasicExample {
         MarkdownTableGeneratorAPIClient client = new MarkdownTableGeneratorAPIClient("YOUR_API_KEY_HERE");
 
         try {
-            // Request body
-            Map&lt;String, Object&gt; parameters &#x3D; new HashMap&lt;&gt;();
-        parameters.put(&quot;headers&quot;, Name,Age,City);
-        parameters.put(&quot;rows&quot;, John Doe,30,New York,Jane Smith,25,Los Angeles,Bob Johnson,35,Chicago);
-        parameters.put(&quot;alignment&quot;, &quot;left&quot;);
-
-            // Execute the API request
-            APIResponse response = client.execute(parameters);
+            // Execute the API request (no parameters required)
+            APIResponse response = client.execute(null);
 
             // Check if the request was successful
             if (response.isSuccess()) {
