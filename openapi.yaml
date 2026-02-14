@@ -1,23 +1,25 @@
 openapi: 3.0.4
 info:
   title: Markdown Table Generator
-  description: Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment.
+  description: >-
+    Markdown Table Generator converts structured data into properly formatted
+    markdown tables with customizable column alignment.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/markdowntable:
     post:
       summary: Generate Markdown Table
-      description: Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment.
+      description: Convert data to a formatted markdown table
       operationId: markdowntable
       parameters: []
       responses:
@@ -35,39 +37,35 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
-                  markdown: >-
+                  markdown: |-
                     | Name | Age | City |
-
                     | --- | --- | --- |
-
                     | John Doe | 30 | New York |
-
                     | Jane Smith | 25 | Los Angeles |
-
                     | Bob Johnson | 35 | Chicago |
                   columnCount: 3
                   rowCount: 3
                   cellCount: 12
                   headers:
-                  - Name
-                  - Age
-                  - City
+                    - Name
+                    - Age
+                    - City
                   alignments:
-                  - left
-                  - left
-                  - left
+                    - left
+                    - left
+                    - left
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
       requestBody:
         required: true
         content:
@@ -76,49 +74,19 @@ paths:
               type: object
               properties:
                 headers:
-                  type: array
+                  type: string
                   description: Array of column header names
-                  example:
-                  - Name
-                  - Age
-                  - City
                 rows:
-                  type: array
+                  type: string
                   description: Array of row arrays containing cell values
-                  example:
-                  - - John Doe
-                    - 30
-                    - New York
-                  - - Jane Smith
-                    - 25
-                    - Los Angeles
-                  - - Bob Johnson
-                    - 35
-                    - Chicago
                 alignment:
                   type: string
-                  description: 'Column alignment: left, center, right, or array of alignments per column'
-                  default: left
-                  example: left
+                  description: >-
+                    Column alignment: left, center, right, or array of
+                    alignments per column
               required:
-              - headers
-              - rows
-              example:
-                headers:
-                - Name
-                - Age
-                - City
-                rows:
-                - - John Doe
-                  - 30
-                  - New York
-                - - Jane Smith
-                  - 25
-                  - Los Angeles
-                - - Bob Johnson
-                  - 35
-                  - Chicago
-                alignment: left
+                - headers
+                - rows
 components:
   securitySchemes:
     api_key:
@@ -126,4 +94,20 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  headers:
+    - Name
+    - Age
+    - City
+  rows:
+    - - John Doe
+      - 30
+      - New York
+    - - Jane Smith
+      - 25
+      - Los Angeles
+    - - Bob Johnson
+      - 35
+      - Chicago
+  alignment: left
