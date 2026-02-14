@@ -9,44 +9,15 @@ const API_KEY = process.env.APIVERVE_API_KEY || 'YOUR_API_KEY_HERE';
 const API_URL = 'https://api.apiverve.com/v1/markdowntable';
 
 /**
- * Make a POST request to the Markdown Table Generator API
+ * Make a GET request to the Markdown Table Generator API
  */
 async function callMarkdownTableGeneratorAPI() {
   try {
-    // Request body
-    const requestBody &#x3D; {
-    &quot;headers&quot;: [
-        &quot;Name&quot;,
-        &quot;Age&quot;,
-        &quot;City&quot;
-    ],
-    &quot;rows&quot;: [
-        [
-            &quot;John Doe&quot;,
-            30,
-            &quot;New York&quot;
-        ],
-        [
-            &quot;Jane Smith&quot;,
-            25,
-            &quot;Los Angeles&quot;
-        ],
-        [
-            &quot;Bob Johnson&quot;,
-            35,
-            &quot;Chicago&quot;
-        ]
-    ],
-    &quot;alignment&quot;: &quot;left&quot;
-};
-
     const response = await fetch(API_URL, {
-      method: 'POST',
+      method: 'GET',
       headers: {
-        'x-api-key': API_KEY,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
+        'x-api-key': API_KEY
+      }
     });
 
     // Check if response is successful
