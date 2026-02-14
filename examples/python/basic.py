@@ -14,42 +14,14 @@ API_URL = 'https://api.apiverve.com/v1/markdowntable'
 
 def call_markdowntable_api():
     """
-    Make a POST request to the Markdown Table Generator API
+    Make a GET request to the Markdown Table Generator API
     """
     try:
-        # Request body
-        request_body &#x3D; {
-    &#x27;headers&#x27;: [
-        &#x27;Name&#x27;,
-        &#x27;Age&#x27;,
-        &#x27;City&#x27;
-    ],
-    &#x27;rows&#x27;: [
-        [
-            &#x27;John Doe&#x27;,
-            30,
-            &#x27;New York&#x27;
-        ],
-        [
-            &#x27;Jane Smith&#x27;,
-            25,
-            &#x27;Los Angeles&#x27;
-        ],
-        [
-            &#x27;Bob Johnson&#x27;,
-            35,
-            &#x27;Chicago&#x27;
-        ]
-    ],
-    &#x27;alignment&#x27;: &#x27;left&#x27;
-}
-
         headers = {
-            'x-api-key': API_KEY,
-            'Content-Type': 'application/json'
+            'x-api-key': API_KEY
         }
 
-        response = requests.post(API_URL, headers=headers, json=request_body)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
