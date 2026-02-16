@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/markdowntable",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment.",
   "main": "index.js",
   "types": "index.d.ts",
