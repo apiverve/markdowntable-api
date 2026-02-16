@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:markdowntable-api:1.1.13'
+    implementation 'com.github.apiverve:markdowntable-api:1.1.14'
 }
 ```
 
@@ -47,8 +47,8 @@ MarkdownTableGeneratorAPIClient client = new MarkdownTableGeneratorAPIClient("YO
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("headers", new ArrayList<>());
-    parameters.put("rows", new ArrayList<>());
+    parameters.put("headers", Arrays.asList("Name", "Age", "City"));
+    parameters.put("rows", Arrays.asList(John Doe,30,New York, Jane Smith,25,Los Angeles, Bob Johnson,35,Chicago));
     parameters.put("alignment", "left");
 
     // Execute the request
