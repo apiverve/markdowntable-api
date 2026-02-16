@@ -44,7 +44,11 @@ from apiverve_markdowntablegenerator.apiClient import MarkdowntableAPIClient
 # Initialize the client with your APIVerve API key
 api = MarkdowntableAPIClient("[YOUR_API_KEY]")
 
-query = { "headers": [ "Name", "Age", "City" ], "rows": [ [ "John Doe", 30, "New York" ], [ "Jane Smith", 25, "Los Angeles" ], [ "Bob Johnson", 35, "Chicago" ] ], "alignment": "left" }
+query = {
+    "headers": ["Name","Age","City"],
+    "rows": [["John Doe",30,"New York"],["Jane Smith",25,"Los Angeles"],["Bob Johnson",35,"Chicago"]],
+    "alignment": "left"
+}
 
 try:
     # Make the API call
@@ -82,7 +86,11 @@ Using the API client, you can perform requests to the API.
 ###### Define Query
 
 ```python
-query = { "headers": [ "Name", "Age", "City" ], "rows": [ [ "John Doe", 30, "New York" ], [ "Jane Smith", 25, "Los Angeles" ], [ "Bob Johnson", 35, "Chicago" ] ], "alignment": "left" }
+query = {
+    "headers": ["Name","Age","City"],
+    "rows": [["John Doe",30,"New York"],["Jane Smith",25,"Los Angeles"],["Bob Johnson",35,"Chicago"]],
+    "alignment": "left"
+}
 ```
 
 ###### Simple Request
@@ -133,7 +141,11 @@ from apiverve_markdowntablegenerator.apiClient import MarkdowntableAPIClient, Ma
 
 api = MarkdowntableAPIClient("[YOUR_API_KEY]")
 
-query = { "headers": [ "Name", "Age", "City" ], "rows": [ [ "John Doe", 30, "New York" ], [ "Jane Smith", 25, "Los Angeles" ], [ "Bob Johnson", 35, "Chicago" ] ], "alignment": "left" }
+query = {
+    "headers": ["Name","Age","City"],
+    "rows": [["John Doe",30,"New York"],["Jane Smith",25,"Los Angeles"],["Bob Johnson",35,"Chicago"]],
+    "alignment": "left"
+}
 
 try:
     result = api.execute(query)
@@ -154,7 +166,11 @@ from apiverve_markdowntablegenerator.apiClient import MarkdowntableAPIClient, Ma
 
 api = MarkdowntableAPIClient("[YOUR_API_KEY]")
 
-query = { "headers": [ "Name", "Age", "City" ], "rows": [ [ "John Doe", 30, "New York" ], [ "Jane Smith", 25, "Los Angeles" ], [ "Bob Johnson", 35, "Chicago" ] ], "alignment": "left" }
+query = {
+    "headers": ["Name","Age","City"],
+    "rows": [["John Doe",30,"New York"],["Jane Smith",25,"Los Angeles"],["Bob Johnson",35,"Chicago"]],
+    "alignment": "left"
+}
 
 try:
     result = api.execute(query)
@@ -188,7 +204,11 @@ The client supports the context manager protocol for automatic resource cleanup:
 ```python
 from apiverve_markdowntablegenerator.apiClient import MarkdowntableAPIClient, MarkdowntableAPIClientError
 
-query = { "headers": [ "Name", "Age", "City" ], "rows": [ [ "John Doe", 30, "New York" ], [ "Jane Smith", 25, "Los Angeles" ], [ "Bob Johnson", 35, "Chicago" ] ], "alignment": "left" }
+query = {
+    "headers": ["Name","Age","City"],
+    "rows": [["John Doe",30,"New York"],["Jane Smith",25,"Los Angeles"],["Bob Johnson",35,"Chicago"]],
+    "alignment": "left"
+}
 
 # Using context manager ensures proper cleanup
 with MarkdowntableAPIClient("[YOUR_API_KEY]") as api:
@@ -214,7 +234,11 @@ from apiverve_markdowntablegenerator.apiClient import MarkdowntableAPIClient
 # Enable debug mode
 api = MarkdowntableAPIClient("[YOUR_API_KEY]", debug=True)
 
-query = { "headers": [ "Name", "Age", "City" ], "rows": [ [ "John Doe", 30, "New York" ], [ "Jane Smith", 25, "Los Angeles" ], [ "Bob Johnson", 35, "Chicago" ] ], "alignment": "left" }
+query = {
+    "headers": ["Name","Age","City"],
+    "rows": [["John Doe",30,"New York"],["Jane Smith",25,"Los Angeles"],["Bob Johnson",35,"Chicago"]],
+    "alignment": "left"
+}
 
 # Debug information will be printed to console
 result = api.execute(query)
@@ -229,8 +253,13 @@ from apiverve_markdowntablegenerator.apiClient import MarkdowntableAPIClient
 
 api = MarkdowntableAPIClient("[YOUR_API_KEY]")
 
+query = {
+    "headers": ["Name","Age","City"],
+    "rows": [["John Doe",30,"New York"],["Jane Smith",25,"Los Angeles"],["Bob Johnson",35,"Chicago"]],
+    "alignment": "left"
+}
+
 try:
-    query = { "headers": [ "Name", "Age", "City" ], "rows": [ [ "John Doe", 30, "New York" ], [ "Jane Smith", 25, "Los Angeles" ], [ "Bob Johnson", 35, "Chicago" ] ], "alignment": "left" }
     result = api.execute(query)
     print(result)
 finally:
