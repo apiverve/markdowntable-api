@@ -14,13 +14,13 @@ namespace APIVerve.API.MarkdownTableGenerator
         /// Array of column header names
         /// </summary>
         [JsonProperty("headers")]
-        public string Headers { get; set; }
+        public List<string> Headers { get; set; }
 
         /// <summary>
         /// Array of row arrays containing cell values
         /// </summary>
         [JsonProperty("rows")]
-        public string Rows { get; set; }
+        public List<string> Rows { get; set; }
 
         /// <summary>
         /// Column alignment: left, center, right, or array of alignments per column
