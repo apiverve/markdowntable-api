@@ -241,11 +241,41 @@ x-api-key: YOUR_API_KEY_HERE
 Get your API key: [https://apiverve.com](https://apiverve.com)
 
 ### Response Format
-All responses are JSON with this structure:
+
+Every APIVerve endpoint returns the same envelope — check `status`, then read `data`:
+
 ```json
 {
   "status": "ok",
+  "error": null,
   "data": { ... }
+}
+```
+
+### Example Response
+
+A real response from the Markdown Table Generator API:
+
+```json
+{
+  "status": "ok",
+  "error": null,
+  "data": {
+    "markdown": "| Name | Age | City |\n| --- | --- | --- |\n| John Doe | 30 | New York |\n| Jane Smith | 25 | Los Angeles |\n| Bob Johnson | 35 | Chicago |",
+    "columnCount": 3,
+    "rowCount": 3,
+    "cellCount": 12,
+    "headers": [
+      "Name",
+      "Age",
+      "City"
+    ],
+    "alignments": [
+      "left",
+      "left",
+      "left"
+    ]
+  }
 }
 ```
 
