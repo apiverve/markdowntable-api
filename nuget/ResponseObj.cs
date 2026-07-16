@@ -25,6 +25,9 @@ namespace APIVerve.API.MarkdownTableGenerator
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
@@ -33,18 +36,30 @@ namespace APIVerve.API.MarkdownTableGenerator
         public string Markdown { get; set; }
 
         [JsonProperty("columnCount")]
-        public long ColumnCount { get; set; }
+        public long? ColumnCount { get; set; }
 
         [JsonProperty("rowCount")]
-        public long RowCount { get; set; }
+        public long? RowCount { get; set; }
 
         [JsonProperty("cellCount")]
-        public long CellCount { get; set; }
+        public long? CellCount { get; set; }
 
         [JsonProperty("headers")]
         public string[] Headers { get; set; }
 
         [JsonProperty("alignments")]
         public string[] Alignments { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
