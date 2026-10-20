@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/markdowntable:
     post:
-      summary: Generate Markdown Table
+      summary: Markdown Table Generator
       description: Convert data to a formatted markdown table
       operationId: markdowntable
       parameters: []
