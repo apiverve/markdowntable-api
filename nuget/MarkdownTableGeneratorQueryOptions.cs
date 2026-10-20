@@ -20,7 +20,7 @@ namespace APIVerve.API.MarkdownTableGenerator
         /// Array of row arrays containing cell values
         /// </summary>
         [JsonProperty("rows")]
-        public List<string> Rows { get; set; }
+        public object Rows { get; set; }
 
         /// <summary>
         /// Column alignment: left, center, right, or array of alignments per column
