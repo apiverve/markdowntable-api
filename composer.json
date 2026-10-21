@@ -1,7 +1,7 @@
 {
     "name": "apiverve/markdowntable",
     "description": "Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment.",
-    "version": "1.2.0",
+    "version": "1.2.2",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -15,13 +15,13 @@
         "api",
         "apiverve",
         "markdowntable",
-        "markdown table",
-        "table generator",
-        "markdown converter",
-        "data to table",
-        "github markdown"
+        "markdown table generator api",
+        "json to markdown table",
+        "json to markdown",
+        "markdown generator api",
+        "markdown table"
     ],
-    "homepage": "https://apiverve.com/marketplace/markdowntable?utm_source=php&utm_medium=homepage",
+    "homepage": "https://apiverve.com/marketplace/markdowntable?utm_source=php&utm_medium=referral&utm_content=homepage",
     "support": {
         "email": "hello@apiverve.com",
         "docs": "https://docs.apiverve.com/ref/markdowntable",
