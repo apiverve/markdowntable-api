@@ -1,7 +1,7 @@
 {
     "name": "apiverve/markdowntable",
     "description": "Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
