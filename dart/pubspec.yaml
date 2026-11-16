@@ -1,6 +1,6 @@
 name: apiverve_markdowntable
 description: "Markdown Table Generator converts structured data into properly formatted markdown tables with customizable column alignment."
-version: 1.2.5
+version: 1.2.6
 homepage: https://apiverve.com/marketplace/markdowntable?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/markdowntable-api/tree/main/dart
 
